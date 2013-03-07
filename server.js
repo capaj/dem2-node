@@ -3,9 +3,11 @@
  * Module dependencies.
  */
 
+
 var express = require('express'),
     http = require('http'),
     ws_server = require('./ws_server.js'),
+    models = require('./models'),
     path = require('path');
 
 var app = express();
@@ -16,8 +18,6 @@ app.configure(function(){
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
-
-  app.use(require('less-middleware')({ src: __dirname + '/public' }));
   app.use(express.static(path.join(__dirname, 'public')));
 });
 

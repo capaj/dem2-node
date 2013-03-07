@@ -17,6 +17,8 @@ local.properties
 .settings/
 .loadpath
 
+phantomjs.exe
+
 # External tool builders
 .externalToolBuilders/
 

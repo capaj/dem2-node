@@ -29,16 +29,16 @@ wsServer.on('request', function(request) {
         console.log((new Date()) + ' Connection from origin ' + request.origin + ' rejected.');
         return;
     }
-
+    var ip = request.remoteAddress;
     var connection = request.accept(null, request.origin);
-    console.log((new Date()) + ' Connection accepted from ' + request.remoteAddress);
+    console.log((new Date()) + ' Connection accepted from ' + ip);
     connection.on('message', function(message) {
         if (message.type === 'utf8') {
-            console.log('Received Message: ' + message.utf8Data);
+            console.log('Received Message from ' + connection.remoteAddress + ': ' + message.utf8Data);
             connection.sendUTF(message.utf8Data);
         }
     });
     connection.on('close', function(reasonCode, description) {
-        console.log((new Date()) + ' Connection from ' + connection.remoteAddress + ' closed.');
+        console.log((new Date()) + ' Connection from ' + ip + ' closed.');
     });
 });
