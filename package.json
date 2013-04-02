@@ -7,7 +7,7 @@
     },
     "dependencies": {
         "express": "latest",
-        "websocket": "latest",
+        "ws": "latest",
         "phantom-proxy": "latest",
         "request": "latest",
         "mongoose": "latest",
