@@ -8,6 +8,7 @@
     "dependencies": {
         "express": "latest",
         "socket.io": "latest",
+        "socket.io-rpc": "latest",
         "phantom-proxy": "latest",
         "request": "latest",
         "mongoose": "latest",
