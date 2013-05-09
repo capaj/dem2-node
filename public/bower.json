@@ -1,0 +1,14 @@
+{
+    "name": "dem2.cz",
+    "version": "0.0.1",
+    "dependencies": {
+        "jquery": "latest",
+        "angular": "latest",
+        "angular-ui": "latest",
+        "angular-ui-bootstrap": "latest",
+        "bootstrap": "latest",
+        "moment": "latest",
+        "modernizr": "latest",
+        "jquery.transit": "latest"
+    }
+}

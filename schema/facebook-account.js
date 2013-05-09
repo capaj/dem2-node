@@ -1,5 +1,5 @@
 var request = require('request'),
-    Q = require('q'),
+    when = require('when'),
     mongoose = require('mongoose');
 
 var FBAccountSchema = mongoose.Schema({
@@ -19,8 +19,8 @@ var FBAccountSchema = mongoose.Schema({
 });
 
 FBAccountSchema.methods.getAccountDetails = function (token) {
-    var deferred = Q.defer();
-    request('https://graph.facebook.com/me?access_token=' + token + '&fields=id,first_name,last_name,gender,link,installed,verified,picture', function (error, response, body) {
+    var deferred = when.defer();
+    request('https://graph.facebook.com/me?access_token=' + token + '&fields=id,first_name,last_name,gender,link,installed,verified,picture,currency', function (error, response, body) {
         if (!error && response.statusCode == 200) {
             var fbAccDetails = JSON.parse(body);
             deferred.resolve(fbAccDetails);
